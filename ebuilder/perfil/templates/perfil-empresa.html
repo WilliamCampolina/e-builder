@@ -1,0 +1,54 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block title %} Perfil Empresa  {% endblock title %}
+
+{% block titlePage %} Perfil Empresa  {% endblock titlePage %}
+
+{% block usuario %}  {% endblock usuario %}
+
+{% block content %}
+
+    <br>
+    {% if empresa %}
+        <!--tem empresa {{ empresa.razaoSocial }}-->
+
+        <div class="col-lg-6 col-md-6 col-xlg-6 col-xs-12">
+            <div class="ribbon-wrapper card">
+                <div class="ribbon ribbon-default">Empresa : {{ empresa.nome }}</div>
+                <p class="ribbon-content">Razão Social : {{ empresa.razaoSocial }}</p>
+                <p class="ribbon-content">Telefone : {{ empresa.telefone }}</p>
+                <p class="ribbon-content">Email : {{ empresa.email }}</p>
+                <p class="ribbon-content">Rua  : {{ empresa.rua }} - CEP : {{ empresa.cep}}</p>
+                <p class="ribbon-content">Estado : {{ empresa.estado }} - Cidade: {{empresa.cidade}} - País: {{empresa.pais}}</p>
+                <br>
+                {%  for topico in empresa.topicos.all  %}
+                    <h6 class="text-muted text-success">
+                        <i class="fa fa-circle font-10 m-r-10 "></i>
+                        {{topico.descricao}}
+                    </h6>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="row">
+            <a href="{% url 'atualizar_empresa' empresa.id %}">
+                <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Alterar Perfil</button>
+            </a>
+        </div>
+    {% else %}
+        <div class="row">
+            <a href="{% url 'cadastro_perfil_empresa' %}">
+                <button type="button" class="btn btn-success"><i class="fa fa-check"></i> Cadastrar Perfil</button>
+            </a>
+        </div>
+    {% endif %}
+
+
+
+
+{% endblock content %}
+
+
