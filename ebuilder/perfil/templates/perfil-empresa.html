@@ -3,9 +3,9 @@
 
 {% extends 'base.html' %}
 
-{% block title %} Perfil Empresa  {% endblock title %}
+{% block title %} Perfil Cliente  {% endblock title %}
 
-{% block titlePage %} Perfil Empresa  {% endblock titlePage %}
+{% block titlePage %} Perfil Cliente  {% endblock titlePage %}
 
 {% block usuario %}  {% endblock usuario %}
 
@@ -17,8 +17,8 @@
 
         <div class="col-lg-6 col-md-6 col-xlg-6 col-xs-12">
             <div class="ribbon-wrapper card">
-                <div class="ribbon ribbon-default">Empresa : {{ empresa.nome }}</div>
-                <p class="ribbon-content">Razão Social : {{ empresa.razaoSocial }}</p>
+                <div class="ribbon ribbon-default">Nome : {{ empresa.nome }}</div>
+                <p class="ribbon-content">Sobrenome : {{ empresa.razaoSocial }}</p>
                 <p class="ribbon-content">Telefone : {{ empresa.telefone }}</p>
                 <p class="ribbon-content">Email : {{ empresa.email }}</p>
                 <p class="ribbon-content">Rua  : {{ empresa.rua }} - CEP : {{ empresa.cep}}</p>

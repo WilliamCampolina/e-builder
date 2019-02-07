@@ -1,0 +1,68 @@
+﻿INSERT INTO public.perfil_subtopicos (descricao,subtopicos_id) VALUES 
+('Projeto Arquitetônico',1)
+,('Projeto Estrutural',1)
+,('Projeto Elétrico (telefonia, internet, TV)',1)
+,('Projeto Hidrosanitario',1)
+,('limpeza e fechamento do terreno',2)
+,('montagem do canteiro e barracão de obras',2)
+,('serviços de terraplenagem (movimentação de terra com corte e ou aterro)',2)
+,('locação de obra (montagem do gabarito)',2)
+,('Fundações superficiais',3)
+,('Sapata',3)
+;
+INSERT INTO public.perfil_subtopicos (descricao,subtopicos_id) VALUES 
+('Bloco de fundação',3)
+,('Radier',3)
+,('Viga de fundação',3)
+,('Fundações profundas',3)
+,('Estacas',3)
+,('Tubulões',3)
+,('alvenarias',4)
+,('chapisco',4)
+,('emboço',4)
+,('reboco',4)
+;
+INSERT INTO public.perfil_subtopicos (descricao,subtopicos_id) VALUES 
+('Drywall (gesso acartonado) ou divisórias!',4)
+,('estrutura (engradamento)',5)
+,('cobertura (telhas)',5)
+,('nstalação de água fria',6)
+,('Instalação de esgoto',6)
+,('Instalação de água quente',6)
+,('passagem de eletrodutos, fios e cabos',7)
+,('instalação de tomadas e interruptores',7)
+,('TV',8)
+,('CFTV',8)
+;
+INSERT INTO public.perfil_subtopicos (descricao,subtopicos_id) VALUES 
+('internet',8)
+,('gás',8)
+,('ar condicionado',8)
+,('pisos cerâmicos',9)
+,('porcelanatos',9)
+,('pisos laminados',9)
+,('azulejos',9)
+,('granitos',9)
+,('Metálicas',10)
+,('Alumínio',10)
+;
+INSERT INTO public.perfil_subtopicos (descricao,subtopicos_id) VALUES 
+('Madeira',10)
+,('PVC',10)
+,('Vidro temperado',10)
+,('Preparar as paredes, pisos e tetos',11)
+,('Aplicar selador',11)
+,('Aplicar massa corrida',11)
+,('Pintura com tinta acrílica em duas ou três demãos',11)
+,('lavatórios',12)
+,('bancadas',12)
+,('box de banheiro',12)
+;
+INSERT INTO public.perfil_subtopicos (descricao,subtopicos_id) VALUES 
+('armários planejados',12)
+,('Piscina',13)
+,('quadra',13)
+,('área para churrasqueira',13)
+,('gradil',13)
+,('plantio de grama e cultivo do jardim',13)
+;

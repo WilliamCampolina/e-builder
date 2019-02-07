@@ -42,7 +42,6 @@ def cadastro_perfil_empresa(request):
 
 
 
-
 @login_required
 def atualizar_empresa(request, id):
     empresa = PerfilEmpresa.objects.get(id=id)
