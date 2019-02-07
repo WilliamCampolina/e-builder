@@ -1,4 +1,3 @@
-import ipdb as ipdb
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
@@ -32,8 +31,6 @@ def cadastro_perfil_empresa(request):
     if form.is_valid():
         #form.save()
         perfil = form.save(commit=False)
-        # import ipdb;
-        # ipdb.set_trace()
         perfil.usuario = request.user
         perfil.save()
         form.save_m2m()
