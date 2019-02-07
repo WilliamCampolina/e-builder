@@ -11,6 +11,8 @@ class PerfilEmpresaForm(forms.ModelForm):
             'topicos': forms.SelectMultiple(attrs={'size': '12'}),
         }
 
+
+
 class PerfilProfissionalForm(forms.ModelForm):
     class Meta:
         model = PerfilProfissional

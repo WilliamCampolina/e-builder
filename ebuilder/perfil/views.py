@@ -1,3 +1,4 @@
+import ipdb as ipdb
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
@@ -9,7 +10,7 @@ from ebuilder.perfil.models import PerfilEmpresa, PerfilProfissional
 
 def list_perfil_empresa(request):
     current_user = request.user
-    empresa = PerfilEmpresa.objects.filter(id_user=current_user.id)
+    empresa = PerfilEmpresa.objects.filter(usuario_id=current_user.id)
     #print(empresa)
 
     if empresa:
@@ -17,21 +18,32 @@ def list_perfil_empresa(request):
 
     return render(request, 'perfil-empresa.html', {'empresa': empresa})
 
+
+
+
+
+
 @login_required
 def cadastro_perfil_empresa(request):
 
     form = PerfilEmpresaForm(request.POST or None)
     #form.id_user = request.user.id
 
-    #print(form.id_user)
-
     if form.is_valid():
+        #form.save()
         perfil = form.save(commit=False)
-        perfil.id_user = request.user.id
+        # import ipdb;
+        # ipdb.set_trace()
+        perfil.usuario = request.user
         perfil.save()
+        form.save_m2m()
+
         return redirect('list_perfil_empresa')
 
     return render(request, 'nova-empresa.html', {'form': form})
+
+
+
 
 
 @login_required
@@ -50,7 +62,7 @@ def atualizar_empresa(request, id):
 
 def list_perfil_profissional(request):
     current_user = request.user
-    profissional = PerfilProfissional.objects.filter(id_user=current_user.id)
+    profissional = PerfilProfissional.objects.filter(usuario=current_user.id)
     print(profissional)
 
     if profissional:
@@ -63,13 +75,14 @@ def list_perfil_profissional(request):
 def cadastro_perfil_profissional(request):
 
     form = PerfilProfissionalForm(request.POST or None)
-    #form.id_user = request.user.id
+    form.id_user = request.user.id
 
 
     if form.is_valid():
         perfil = form.save(commit=False)
-        perfil.id_user = request.user.id
+        perfil.usuario = request.user
         perfil.save()
+        form.save_m2m()
         return redirect('list_perfil_profissional')
 
 
