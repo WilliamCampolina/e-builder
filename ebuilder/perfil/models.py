@@ -19,7 +19,8 @@ class SubTopicos(models.Model):
 class PerfilEmpresa(models.Model):
     #topico = models.ForeignKey(Topicos, on_delete=models.CASCADE)
     topicos = models.ManyToManyField(Topicos)
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    id_user = models.IntegerField()
+    #usuario = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     razaoSocial = models.CharField('Razão Social', max_length=100)
     nome = models.CharField('Nome Fantasia', max_length=100)
     telefone = models.CharField('Telefone', max_length=100)
@@ -37,7 +38,8 @@ class PerfilEmpresa(models.Model):
 class PerfilProfissional(models.Model):
     #subtopico = models.ForeignKey(SubTopicos, on_delete=models.CASCADE)
     servicos = models.ManyToManyField(SubTopicos)
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    id_user = models.IntegerField()
+    #usuario = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     nome = models.CharField('Nome', max_length=100)
     sobrenome = models.CharField('Sobrenome', max_length=100)
     telefone = models.CharField('Telefone', max_length=100)

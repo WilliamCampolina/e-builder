@@ -9,8 +9,9 @@ from ebuilder.perfil.models import PerfilEmpresa, PerfilProfissional
 
 def list_perfil_empresa(request):
     current_user = request.user
-    empresa = PerfilEmpresa.objects.filter(id=current_user.id)
+    empresa = PerfilEmpresa.objects.filter(id_user=current_user.id)
     #print(empresa)
+
     if empresa:
         empresa = empresa.get()
 
@@ -20,9 +21,14 @@ def list_perfil_empresa(request):
 def cadastro_perfil_empresa(request):
 
     form = PerfilEmpresaForm(request.POST or None)
-    form.usuario = request.user
+    #form.id_user = request.user.id
+
+    #print(form.id_user)
+
     if form.is_valid():
-        form.save()
+        perfil = form.save(commit=False)
+        perfil.id_user = request.user.id
+        perfil.save()
         return redirect('list_perfil_empresa')
 
     return render(request, 'nova-empresa.html', {'form': form})
@@ -44,8 +50,9 @@ def atualizar_empresa(request, id):
 
 def list_perfil_profissional(request):
     current_user = request.user
-    profissional = PerfilProfissional.objects.filter(id=current_user.id)
-    #print(profissional)
+    profissional = PerfilProfissional.objects.filter(id_user=current_user.id)
+    print(profissional)
+
     if profissional:
         profissional = profissional.get()
 
@@ -56,11 +63,13 @@ def list_perfil_profissional(request):
 def cadastro_perfil_profissional(request):
 
     form = PerfilProfissionalForm(request.POST or None)
-    form.usuario = request.user
+    #form.id_user = request.user.id
 
 
     if form.is_valid():
-        form.save()
+        perfil = form.save(commit=False)
+        perfil.id_user = request.user.id
+        perfil.save()
         return redirect('list_perfil_profissional')
 
 
