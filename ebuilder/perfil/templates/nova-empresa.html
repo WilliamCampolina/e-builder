@@ -16,23 +16,21 @@
                                 <h4 class="m-b-0 text-white">Formulário Empresa</h4>
                             </div>
                             <div class="card-body">
-                                <form method="POST" >
+                                <form method="POST" class="form-horizontal">
                                     {% csrf_token %}
-
-                                    <div class="floating-labels m-t-40">
 
                                         <div class="row p-t-20">
                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.nome.label}}</label>
-                                                    {{ form.nome | addclass:'form-control p-0' }}
+                                                    {{ form.nome | addclass:'form-control' }}
 
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.razaoSocial.label}}</label>
-                                                    {{ form.razaoSocial | addclass:'form-control p-0' }}
+                                                    {{ form.razaoSocial | addclass:'form-control' }}
 
                                                 </div>
                                             </div>
@@ -43,14 +41,14 @@
                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.email.label}}</label>
-                                                    {{ form.email | addclass:'form-control p-0' }}
+                                                    {{ form.email | addclass:'form-control' }}
 
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.telefone.label}}</label>
-                                                    {{ form.telefone | addclass:'form-control p-0' }}
+                                                    {{ form.telefone | addclass:'form-control' }}
 
                                                 </div>
                                             </div>
@@ -61,7 +59,7 @@
                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.cep.label}}</label>
-                                                    {{ form.cep | addclass:'form-control p-0' }}
+                                                    {{ form.cep | addclass:'form-control' }}
 
                                                 </div>
                                             </div>
@@ -72,28 +70,28 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.rua.label}}</label>
-                                                    {{ form.rua | addclass:'form-control p-0' }}
+                                                    {{ form.rua | addclass:'form-control' }}
 
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.cidade.label}}</label>
-                                                    {{ form.cidade | addclass:'form-control p-0' }}
+                                                    {{ form.cidade | addclass:'form-control' }}
 
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.estado.label}}</label>
-                                                    {{ form.estado | addclass:'form-control p-0' }}
+                                                    {{ form.estado | addclass:'form-control' }}
                                                 </div>
                                             </div>
 
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.pais.label}}</label>
-                                                    {{ form.pais | addclass:'form-control p-0' }}
+                                                    {{ form.pais | addclass:'form-control' }}
                                                 </div>
                                             </div>
                                         </div>
@@ -102,15 +100,12 @@
                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="control-label">{{form.topicos.label}}</label>
-                                                    {{ form.topicos | addclass:'form-control p-0' }}
+                                                    {{ form.topicos | addclass:'form-control' }}
 
                                                 </div>
                                             </div>
                                         </div>
 
-
-
-                                    </div>
                                     <div class="form-actions">
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Salvar</button>
                                     </div>
